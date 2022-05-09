@@ -20,7 +20,11 @@ const Search = (props) => {
   const [country, setCountry] = useState("");
 
   const onSearchTodayWeather = () => {
-    dispatch(getTodayWeather({ city, country }));
+    if (city == "" && country == "") {
+      alert("please input city or country");
+    } else {
+      dispatch(getTodayWeather({ city, country }));
+    }
   };
 
   const onClear = () => {
