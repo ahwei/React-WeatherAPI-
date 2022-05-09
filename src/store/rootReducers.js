@@ -1,9 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import counterSlice from "./counterSlice";
-import authSlice from "./authSlice";
+import weatherSlice from "./weatherSlice";
 
 const rootReducers = combineReducers({
-  auth: authSlice,
+  weather: weatherSlice,
 });
 
 export default rootReducers;

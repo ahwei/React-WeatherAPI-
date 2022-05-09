@@ -7,14 +7,10 @@ const HistoryList = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid>
+    <Grid className={classes.container}>
       <Typography variant="h4">Search Histroy</Typography>
       <Divider />
-      <Grid
-        container
-        flexDirection={"column"}
-        className={classes.container}
-      ></Grid>
+      <Grid container flexDirection={"column"}></Grid>
     </Grid>
   );
 };

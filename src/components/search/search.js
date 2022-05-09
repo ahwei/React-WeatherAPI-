@@ -9,12 +9,24 @@ import {
   Stack,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useDispatch } from "react-redux";
+import { getTodayWeather } from "../../store/weatherSlice";
 
 const Search = (props) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Taipei");
   const [country, setCountry] = useState("");
+
+  const onSearchTodayWeather = () => {
+    dispatch(getTodayWeather({ city, country }));
+  };
+
+  const onClear = () => {
+    setCity("");
+    setCountry("");
+  };
 
   return (
     <Grid>
@@ -33,10 +45,14 @@ const Search = (props) => {
           onChange={(e) => setCountry(e.target.value)}
         />
 
-        <Button variant="contained" className={classes.btn}>
+        <Button
+          variant="contained"
+          className={classes.btn}
+          onClick={onSearchTodayWeather}
+        >
           Search
         </Button>
-        <Button variant="contained" className={classes.btn}>
+        <Button variant="contained" className={classes.btn} onClick={onClear}>
           Clear
         </Button>
       </Stack>

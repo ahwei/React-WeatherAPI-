@@ -1,5 +1,4 @@
 import axios from "axios";
-import { async } from "q";
 
 export const uri_api = "https://api.openweathermap.org/";
 
@@ -13,30 +12,27 @@ const fetchData = async (
   data,
   params = {
     headers: {},
-    method: "POST",
+    method: "GET",
     others: {},
   }
 ) => {
-  const URL = uri_api + url;
+  const URL = url;
 
   const headers = params.headers || {};
   const token = "74b3a142d0b9e4214df92f9cdb133f2e";
 
-  const res = await _axios.request({
+  return _axios.request({
     url: URL + `&appid=${token}`,
-    method: "GET",
+    method: params.method || "GET",
 
     headers: {
-      "Content-Type": "application/json",
+      // "Content-Type": "application/json",
       // Authorization: `Bearer ${token}`,
       ...headers,
     },
     mode: "cors",
-    data: data,
-    ...params.others,
+    data: params.method == "GET" ? null : data,
   });
-
-  return res;
 };
 
 export default fetchData;
