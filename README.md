@@ -1,3 +1,3 @@
 # React Weather API
 
-## use creat react app
+## use create react app
