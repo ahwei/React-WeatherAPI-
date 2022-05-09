@@ -17,13 +17,13 @@ const Result = (props) => {
       </Grid>
 
       {today && today?.status === 0 && (
-        <Grid>
+        <Grid className={classes.notfound} container justifyContent={"center"}>
           <Typography>not found</Typography>
         </Grid>
       )}
 
       {today && today?.status === 200 && (
-        <Grid>
+        <Grid sx={{ paddingLeft: 3 }}>
           <Typography variant="body1">
             {today?.location?.name},{today?.location?.country}
           </Typography>
@@ -52,7 +52,12 @@ const Result = (props) => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  notfound: {
+    background: "#ff00006e",
+    border: "1px solid red",
+  },
+}));
 
 Result.propTypes = {};
 
