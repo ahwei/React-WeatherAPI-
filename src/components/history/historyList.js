@@ -9,8 +9,7 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useSelector, useDispatch } from "react-redux";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaRegTrashAlt } from "react-icons/fa";
+import { MdSearchOff } from "react-icons/md";
 import HistoryItem from "./historyItem";
 
 const HistoryList = (props) => {
@@ -29,8 +28,14 @@ const HistoryList = (props) => {
       </Grid>
 
       {historys.length == 0 && (
-        <Grid container justifyContent={"center"} className={classes.norecord}>
-          No Record
+        <Grid
+          container
+          justifyContent={"center"}
+          className={classes.norecord}
+          alignItems="center"
+        >
+          <MdSearchOff size={30} />
+          <Typography variant="h6">No Record</Typography>
         </Grid>
       )}
     </Grid>
