@@ -2,8 +2,15 @@
 
 ## use create react app
 
-### 1. yarn
-
-### 2. yarn start
+```
+yarn
+yarn start
+```
 
 ![demo](./public/demo.png)
+
+## use plguin
+
+### redux-toolkits
+
+### material-ui
