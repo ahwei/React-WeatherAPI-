@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Grid, Typography, Avatar } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 
 const weatherCard = ({ today }) => {
   return (
@@ -23,19 +22,10 @@ const weatherCard = ({ today }) => {
         Temperature:{today?.main?.temp_min}°C~{today?.main?.temp_max}°C
       </Typography>
       <Typography variant="body2">Humidity:{today?.main?.humidity}%</Typography>
-      <Typography variant="body2">
-        {/* Time:{today?.weather[0].description} */}
-      </Typography>
+      <Typography variant="body2">Time:{today?.location?.time}</Typography>
     </Grid>
   );
 };
-
-const useStyles = makeStyles((theme) => ({
-  notfound: {
-    background: "#ff00006e",
-    border: "1px solid red",
-  },
-}));
 
 weatherCard.propTypes = {};
 

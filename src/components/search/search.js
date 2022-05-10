@@ -35,7 +35,7 @@ const Search = (props) => {
   return (
     <Grid>
       <Typography variant="h4">Today's Weather</Typography>
-      <Divider />
+      <Divider sx={{ background: "#000" }} />
       <Stack spacing={2} direction="row" className={classes.container}>
         <TextField
           value={city}
