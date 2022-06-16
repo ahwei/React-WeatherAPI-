@@ -18,4 +18,4 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();
+module.hot.accept();
